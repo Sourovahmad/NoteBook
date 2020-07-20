@@ -1,11 +1,11 @@
 
 
 <!-- Nav menu with text -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark pmd-navbar pmd-z-depth ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="My NoteBook">
     <i class="fa fa-address-book-o" aria-hidden="true"></i> 
-    <span class="title">  Digital Phone Book   </span></a>
+    <span class="title"> My NoteBook   </span></a>
 
     <button class="navbar-toggler pmd-navbar-toggle ml-auto" type="button" data-toggle="collapse" data-target="#navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
             <a class="nav-link" href="create">Add New</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#">about</a>
           </li>
       </ul>
       <span class="navbar-text"> <a class="link" href="/">How to use</a>  </span>
