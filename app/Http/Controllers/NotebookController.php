@@ -37,10 +37,10 @@ class NotebookController extends Controller
     {
         $notebook = new notebook;
       
-        $notebook->firstname=$request->firstname;
-        $notebook->lastname=$request->lastname;
+        $notebook->name=$request->name;
         $notebook->email=$request->email;
-        $notebook->phone=$request->phone;
+        $notebook->date=$request->date;
+        $notebook->text=$request->text;
 
         $notebook->save();
 
