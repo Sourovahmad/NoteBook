@@ -24,7 +24,7 @@ class NotebookController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -40,7 +40,7 @@ class NotebookController extends Controller
         $notebook->name=$request->name;
         $notebook->email=$request->email;
         $notebook->date=$request->date;
-        $notebook->text=$request->text;
+        $notebook->note=$request->note;
 
         $notebook->save();
 

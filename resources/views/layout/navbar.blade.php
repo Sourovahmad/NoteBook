@@ -1,7 +1,7 @@
 
 
 <!-- Nav menu with text -->
-<nav class="navbar navbar-expand-lg navbar-dark  bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark  bg-primary fixed-top text-light">
 
     <a class="navbar-brand" href="My NoteBook">
     <i class="fa fa-address-book-o" aria-hidden="true"></i> 
