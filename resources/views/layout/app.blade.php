@@ -19,8 +19,8 @@
 
 <body>
 
+      
 
-    <input type="text" value="{{route('home')}}" id="indexLink" hidden>
 
     @include("layout.navbar")
 
@@ -45,7 +45,13 @@
         $.material.init()
     </script>
 
-
+<script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+         </script>
 
 
 

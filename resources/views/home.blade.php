@@ -1,30 +1,70 @@
 @extends('layout.app');
 @section('content')
 
+
+
+
 <div class="container">
+
 <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 
+
+
+<div class="col-xl-3 col-md-6 mb-4 text-center topCard">
+   <div class="card border-primary shadow h-100 py-4">
+     <div class="card-img-top ">
+       <i class="fas fa-calendar fa-2x text-info"></i>
+     </div>
+     <div class="card-body">
+       <div class="row no-gutters align-items-center">
+         <div class="col mr-2">
+           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">কাস্টমার</div>
+           <div class="h5 mb-0 font-weight-bold text-gray-800">customers</div>
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+ <div class="col-xl-3 col-md-6 mb-4 text-center topCard">
+   <div class="card border-left-primary shadow h-100 py-4">
+     <div class="card-img-top ">
+       <i class="fas fa-calendar fa-2x text-info"></i>
+     </div>
+     <div class="card-body">
+       <div class="row no-gutters align-items-center">
+         <div class="col mr-2">
+           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">কাস্টমার</div>
+           <div class="h5 mb-0 font-weight-bold text-gray-800">customers</div>
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </div><div class="col-xl-3 col-md-6 mb-4 text-center topCard">
+   <div class="card border-left-primary shadow h-100 py-4">
+     <div class="card-img-top ">
+       <i class="fas fa-calendar fa-2x text-info"></i>
+     </div>
+     <div class="card-body">
+       <div class="row no-gutters align-items-center">
+         <div class="col mr-2">
+           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">কাস্টমার</div>
+           <div class="h5 mb-0 font-weight-bold text-gray-800">customers</div>
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </div>
+
+ </div>
+
+
+</div>
 
 
 
@@ -108,6 +148,12 @@
 
 </body>
 
-</html>6php 
+</html>
+
+
+
+
+
+
 
 @endsection
