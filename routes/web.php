@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'NotebookController@index')->name('home');
-Route::post('/', 'NotebookController@index')->name('store');
-Route::get('/create','CrudController@create')->name('create');
+Route::post('/', 'NotebookController@store')->name('store');
+Route::get('/create','NotebookController@create')->name('create');

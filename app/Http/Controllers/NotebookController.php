@@ -35,7 +35,16 @@ class NotebookController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $notebook = new notebook;
+      
+        $notebook->firstname=$request->firstname;
+        $notebook->lastname=$request->lastname;
+        $notebook->email=$request->email;
+        $notebook->phone=$request->phone;
+
+        $notebook->save();
+
+        return redirect(route("home"));
     }
 
     /**
