@@ -35,7 +35,7 @@ class NotebookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
