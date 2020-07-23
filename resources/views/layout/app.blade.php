@@ -20,6 +20,7 @@
 <body>
 
       
+<input type="text"  value="{{route('home')}}" id="indexLink"   hidden   >
 
 
     @include("layout.navbar")
@@ -41,9 +42,62 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
 
+
+  
+
+
+    
     <script type="text/javascript">
         $.material.init()
     </script>
+
+    
+
+    <!-- /Attachment Modal -->
+    <script>
+$(document).ready(function(){
+
+$(document).on('click', "#level-edit-item", function() {
+
+    $(this).addClass('edit-item-trigger-clicked'); //useful for identifying which trigger was clicked and consequently grab data from the correct row and not the wrong one.
+
+    var options = {
+      'backdrop': 'static'
+    };
+    
+    $('#level-edit-modal').modal(options)
+  });
+
+  // on modal show
+  $('#level-edit-modal').on('show.bs.modal', function() {
+    var el = $(".edit-item-trigger-clicked"); // See how its usefull right here?
+    var row = el.closest(".data-row");
+
+    // get the data
+    var id = row.data('item-id');
+    var name = row.children(".name").text();
+    var date = row.children(".date").text();
+    var note = row.children(".note").text();
+   
+
+
+    var action= $("#indexLink").val()+'/update/'+id;
+    $("#level-edit-form").attr('action',action);
+
+    // fill the data in the input fields
+    $("#modal-input-id").val(id);
+    $("#modal-input-name ").val(name);
+    $("#modal-input-date").val(date);
+    $("#modal-input-note").val(note);
+   
+  });
+  //on modal hide
+  $('#level-edit-modal').on('hide.bs.modal', function() {
+    $('.edit-item-trigger-clicked').removeClass('edit-item-trigger-clicked')
+    $("#level-edit-form").trigger("reset");
+  });
+}) ;
+</script> 
 
 <script type="text/javascript">
              $(document).ready(function () {

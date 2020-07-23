@@ -22,15 +22,7 @@
   </div>
 
 
-  <div class="col col-4 ">
 
-
-
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Email address</label>
-      <input type="text" class="form-control" name="email" placeholder="Enter Your Email">
-    </div>
-  </div>
 
   <div class="col col-4 ">
 

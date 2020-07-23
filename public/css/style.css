@@ -233,6 +233,7 @@ i, span {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .wrapper {
+  margin-left: -120px;
     display: flex;
     align-items: stretch;
 }
@@ -435,4 +436,5 @@ a.article, a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+
 }

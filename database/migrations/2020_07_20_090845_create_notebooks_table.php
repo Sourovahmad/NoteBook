@@ -16,7 +16,6 @@ class CreateNotebooksTable extends Migration
         Schema::create('notebooks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
             $table->string('date');
             $table->string('note');
             $table->timestamps();

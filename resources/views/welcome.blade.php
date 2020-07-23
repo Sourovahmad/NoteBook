@@ -61,7 +61,7 @@
                     <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
                 </ul>
             </nav>
-
+</div>
 
 
                 <div class="container-fluid">

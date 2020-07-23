@@ -14,7 +14,9 @@ class NotebookController extends Controller
      */
     public function index()
     {
-        return view('welcome');    
+
+        $data =  Notebook::all();   
+        return view('home',compact('data'));
     }
 
     /**
@@ -38,7 +40,7 @@ class NotebookController extends Controller
         $notebook = new notebook;
       
         $notebook->name=$request->name;
-        $notebook->email=$request->email;
+
         $notebook->date=$request->date;
         $notebook->note=$request->note;
 
