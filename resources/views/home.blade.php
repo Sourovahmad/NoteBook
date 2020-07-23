@@ -89,33 +89,34 @@
 
 <div class="card-header py-3 bg-abasas-dark">
     <nav class="navbar navbar-dark ">
-        <a class="navbar-brand">Level List</a>
-
+        <a class="navbar-brand"> Your Notes  </a>
+        <button type="button" class="btn btn-danger p-2 bd-highlight" data-toggle="modal" data-target="#exampleModalCenter">
+              Add Note
+            </button>
     </nav>
 </div>
 <div class="card-body">
     <div class="table-responsive">
-        <table class="table table-striped table-bordered" id="dataTable1" width="100%" cellspacing="0">
+        <table class="table table-striped table-bordered" id="myTable" width="100%" cellspacing="0">
             <thead class="bg-abasas-dark">
 
 
             <tr>
-                <th>#</th>
-                <th>firstname</th>
-                <th>lastname</th>
-                <th>email</th>
-                <th>phone</th>
+                <th>id</th>
+                <th>name</th>
+                <th>Date</th>
+                <th>Note</th>
                 <th>Action</th>
 
             </tr>
             </thead>
             <tbody>
 
-
+            <?php $i = 1; ?>
             @foreach ($data as $level)
-             
+            <?php $id = $level->id; ?>
                 <tr class="data-row">
-                <td class=" word-break id">{{$level->id}}</td>
+                <td class="iteration">{{$i++}}</td>
                     <td class="  word-break name ">{{$level->name}}</td>
                     <td class=" word-break date ">{{$level->date}}</td>
                     <td class=" word-break note ">{{$level->email}}</td>
@@ -125,23 +126,41 @@
 
 
                     <td class="align-middle">
-                    <button type="button" class="btn btn-success" id="level-edit-item" data-item-id={{$id ?? ''}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
+                    <button type="button" class="btn btn-success" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
+                       
 
+                    <form method="POST" action="{{ route('destroy',  $level->id )}} " id="delete-form-{{ $level->id }}" style="display:none; ">
+                                        {{csrf_field() }}
+                                        {{ method_field("delete") }}
+                                    </form>
+
+
+                                    <button onclick="if(confirm('are you sure to delete this')){
+                                        document.getElementById('delete-form-{{ $level->id }}').submit();
+                                        }
+                                        else{
+                                        event.preventDefault();
+                                        }
+                                        " class="btn btn-danger btn-sm btn-raised">
+                                        <i class="fa fa-trash" aria-hidden="false"></i>
+                                    </button>
                         
 
 
                     </td>
 
                 </tr>
+        
             @endforeach
-
+          
             </tbody>
         </table>
     </div>
 </div>
 </div>
 
-
+<!-- 
+{{$data->links()}} -->
 
 </div>
 

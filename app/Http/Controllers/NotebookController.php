@@ -15,7 +15,7 @@ class NotebookController extends Controller
     public function index()
     {
 
-        $data =  Notebook::all();   
+        $data =  Notebook::paginate(6);   
         return view('home',compact('data'));
     }
 
@@ -66,7 +66,7 @@ class NotebookController extends Controller
      * @param  \App\Notebook  $notebook
      * @return \Illuminate\Http\Response
      */
-    public function edit(Notebook $notebook)
+    public function edit( $id)
     {
         //
     }
@@ -78,9 +78,18 @@ class NotebookController extends Controller
      * @param  \App\Notebook  $notebook
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Notebook $notebook)
+    public function update(Request $request, Notebook $notebook,$id)
     {
-        //
+        $notebook = Notebook:: find ($id);
+      
+        $notebook->name=$request->name;
+
+        $notebook->date=$request->date;
+        $notebook->note=$request->note;
+
+        $notebook->save();
+
+        return redirect(route("home"));
     }
 
     /**
@@ -89,8 +98,9 @@ class NotebookController extends Controller
      * @param  \App\Notebook  $notebook
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notebook $notebook)
+    public function destroy($id)
     {
-        //
+        Notebook::find($id)->delete();
+        return redirect(route("home"));
     }
 }

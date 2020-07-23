@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+     <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
 
 </head>
@@ -42,7 +42,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
 
-
+   <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   
 
 
@@ -56,6 +56,10 @@
     <!-- /Attachment Modal -->
     <script>
 $(document).ready(function(){
+
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
 
 $(document).on('click', "#level-edit-item", function() {
 
