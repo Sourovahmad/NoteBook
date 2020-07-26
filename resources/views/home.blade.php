@@ -17,7 +17,7 @@
       <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-     
+               
 
           <ul class="list-unstyled components">
             <li class="active">
@@ -115,7 +115,7 @@
                 <td class="iteration">{{$i++}}</td>
                     <td class="  word-break name ">{{$level->name}}</td>
                     <td class=" word-break date ">{{$level->date}}</td>
-                    <td class=" word-break note ">{{$level->email}}</td>
+                    <td class=" word-break note border border-success">{{$level->note}}</td>
                   
 
 
@@ -208,7 +208,7 @@
             <div class="col col-12  col-md-6 p-2">
               <div class="form-group ">
                 <label for="exampleFormControlTextarea1">Enter Text</label>
-                <textarea class="form-control" name="note" rows="5" col="10"></textarea>
+                <textarea class="form-control border border-success" name="note" rows="5" col="10"></textarea>
               </div>
 
               

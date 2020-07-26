@@ -78,7 +78,7 @@ $(document).on('click', "#level-edit-item", function() {
     var row = el.closest(".data-row");
 
     // get the data
-    var id = row.data('item-id');
+    var id = el.data('item-id');
     var name = row.children(".name").text();
     var date = row.children(".date").text();
     var note = row.children(".note").text();
