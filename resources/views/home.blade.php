@@ -122,7 +122,7 @@
 
 
                     <td class="align-middle">
-                    <button type="button" class="btn btn-success" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
+                    <button type="button" class="btn btn-success btn-sm" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
                        
 
                     <form method="POST" action="{{ route('destroy',  $level->id )}} " id="delete-form-{{ $level->id }}" style="display:none; ">
@@ -155,8 +155,7 @@
 </div>
 </div>
 
-<!-- 
-{{$data->links()}} -->
+
 
 </div>
 
