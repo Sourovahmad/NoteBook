@@ -17,11 +17,7 @@
       <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-          <div class="sidebar-header">
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-              Add New
-            </button>
-          </div>
+     
 
           <ul class="list-unstyled components">
             <li class="active">
