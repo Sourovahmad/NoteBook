@@ -35,25 +35,28 @@
     <div class="row">
 
     @foreach ($data as $all)
+    @php
+    $id = $all->id;
+    @endphp
       <div class="card-deck mb-2 text-center">
 
 
         <div class="card mb-4 mr-4 box-shadow">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal">{{$all->date}}</h4>
+            <h4 class="my-0 font-weight-normal">{{$all->name}}</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title" style="font-size: 20px;"> Name :{{$all->name}}</h1>
+          <h1 class="card-title pricing-card-title name{{$all->id}}" style="font-size: 20px;"> {{$all->date}}</h1>
                    
-            <textarea class="mt-4 mb-2" name="" id="" >
-              {{$all->note}}
+            <textarea class="mt-4 mb-2" name="note" id="" >
+              {{$all->note}} 
             </textarea>
 
 
                       </div>
                       
             <div class="btn-group align-middle" role="group" ">
-            <button type="button" class="btn btn-success btn-sm mr-1" id="level-edit-item" data-item-id={{$id ?? ''}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
+            <button type="button" class="btn btn-success btn-sm mr-1" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
           
           <form method="POST" action="{{ route('destroy',  $all->id )}} " id="delete-form-{{ $all->id }}" style="display:none; ">
                         {{csrf_field() }}
@@ -77,7 +80,10 @@
 
 
       </div>
+     
       @endforeach
+
+
 
     </div>
   </div>
@@ -162,8 +168,8 @@
 </div>
 
 
-<!-- Attachment Modal -->
-<div class="modal fade" id="level-edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
+ <!-- Attachment Modal -->
+ <div class="modal fade" id="level-edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -172,20 +178,20 @@
         </button>
       </div>
       <div class="modal-body" id="attachment-body-content">
-      <form id="level-edit-form" class="form-horizontal" method="POST" action="">
+        <form id="level-edit-form" class="form-horizontal" method="POST" action="">
           @csrf
 
 
           <!-- id -->
           <div class="form-group">
             <label class="col-form-label" for="modal-input-id">Id </label>
-            <input type="text" name="id" class="form-control" id="modal-input-id">
+            <input type="text" name="id" class="form-control" id="modal-input-id" readonly>
           </div>
 
           <!-- name -->
           <div class="form-group">
             <label class="col-form-label" for="modal-input-name">Name</label>
-            <input type="text" name="name" class="form-control" id="modal-input-name" >
+            <input type="text" name="name" class="form-control" id="modal-input-name">
           </div>
           <div class="form-group">
             <label class="col-form-label" for="modal-input-date">Date</label>
@@ -200,7 +206,6 @@
           <div class="form-group">
             <input type="submit" value="Submit" class="form-control btn btn-success">
           </div>
-
           <!-- /description -->
         </form>
       </div>
@@ -208,7 +213,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- End of all modal -->
 

@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'NotebookController@index')->name('home');
 Route::post('/', 'NotebookController@store')->name('store');
 Route::get('/create','NotebookController@create')->name('create');
-Route::post('update' ,'NotebookController@update')->name("update");
+Route::post('update/{id}' ,'NotebookController@update')->name("update");
 Route::delete('destroy/{id}' ,'NotebookController@destroy')->name("destroy");

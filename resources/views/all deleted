@@ -222,5 +222,6 @@
 </div>
 
 
-
+  //   var nameclass= 'name'+id;
+    //  alert( $(nameclass).text());
 
