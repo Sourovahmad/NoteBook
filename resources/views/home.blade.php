@@ -2,6 +2,8 @@
 @section('content')
 
 
+<div id="fullbody">
+
 
 <!-- ======= Header ======= -->
 <header id="header" class="d-flex flex-column justify-content-center ">
@@ -175,7 +177,7 @@
           <!-- id -->
           <div class="form-group">
             <label class="col-form-label" for="modal-input-id">Id </label>
-            <input type="text" name="id" class="form-control" id="modal-input-id">
+            <input type="text" name="id" class="form-control" id="modal-input-id" value="">
           </div>
 
           <!-- name -->
@@ -208,6 +210,6 @@
 <!-- End of all modal -->
 
 
-
+ </div>
 
 @endsection
