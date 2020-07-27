@@ -2,6 +2,7 @@
  body{
    
 
+   z-index: 0;
  }
 
 
@@ -568,7 +569,7 @@ a.article, a.article:hover {
 #hero {
 
   background: url("/img/notebook.jpg");
-
+  background-size: 100%;
   background-size: cover;
  
   background-attachment: fixed;

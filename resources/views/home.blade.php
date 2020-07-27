@@ -26,10 +26,11 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center">
 
+ 
+  <div class="container-fluid p-5">
   <div class="section-title">
     <h2>Your NOTE</h2>
   </div>
-  <div class="container-fluid p-5">
 
     <div class="row">
 
@@ -77,6 +78,7 @@
 
       </div>
       @endforeach
+
     </div>
   </div>
 
@@ -170,20 +172,20 @@
         </button>
       </div>
       <div class="modal-body" id="attachment-body-content">
-        <form id="level-edit-form" class="form-horizontal" method="POST" action="">
+      <form id="level-edit-form" class="form-horizontal" method="POST" action="">
           @csrf
 
 
           <!-- id -->
           <div class="form-group">
             <label class="col-form-label" for="modal-input-id">Id </label>
-            <input type="text" name="id" class="form-control" id="modal-input-id" value="">
+            <input type="text" name="id" class="form-control" id="modal-input-id">
           </div>
 
           <!-- name -->
           <div class="form-group">
             <label class="col-form-label" for="modal-input-name">Name</label>
-            <input type="text" name="name" class="form-control" id="modal-input-name">
+            <input type="text" name="name" class="form-control" id="modal-input-name" >
           </div>
           <div class="form-group">
             <label class="col-form-label" for="modal-input-date">Date</label>
@@ -198,6 +200,7 @@
           <div class="form-group">
             <input type="submit" value="Submit" class="form-control btn btn-success">
           </div>
+
           <!-- /description -->
         </form>
       </div>
