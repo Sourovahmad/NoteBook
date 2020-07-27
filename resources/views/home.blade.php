@@ -3,27 +3,85 @@
 
 
 
-      <!-- ======= Header ======= -->
-      <header id="header" class="d-flex flex-column justify-content-center ">
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex flex-column justify-content-center ">
 
-        <nav class="nav-menu">
-          <ul>
-            <li class="active"><a href="#portfolio"><i class="fa fa-plus"></i> <span>Add</span></a></li>
-            <li class=""><a href="#hero"><i class="fa fa-home"></i> <span>Home</span></a></li>
-            <li><a href="#about"><i class="fa fa-user"></i> <span>About Abasas</span></a></li>
-            <li><a href="#resume"><i class="fa fa-book"></i> <span>Resume</span></a></li>
+  <nav class="nav-menu">
+    <ul>
+      <li class="active"><a href="#portfolio"  data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus"></i> <span>Add</span></a>
+   
+      <li class=""><a href="#hero"><i class="fa fa-home"></i> <span>Home</span></a></li>
+      <li><a href="#about"><i class="fa fa-user"></i> <span>About Abasas</span></a></li>
+      <li><a href="#resume"><i class="fa fa-book"></i> <span>Resume</span></a></li>
 
-            <li><a href="#services"><i class="fa fa-server"></i> <span>Services</span></a></li>
-            <li><a href="#contact"><i class="fa fa-envelope"></i> <span>Contact</span></a></li>
-          </ul>
-        </nav><!-- .nav-menu -->
+      <li><a href="#services"><i class="fa fa-server"></i> <span>Services</span></a></li>
+      <li><a href="#contact"><i class="fa fa-envelope"></i> <span>Contact</span></a></li>
+    </ul>
+  </nav><!-- .nav-menu -->
 
-      </header><!-- End Header -->
+</header><!-- End Header -->
 
-          <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    
-  </section>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center">
+
+  <div class="section-title">
+    <h2>Your NOTE</h2>
+  </div>
+  <div class="container-fluid p-5">
+
+    <div class="row">
+
+    @foreach ($data as $all)
+      <div class="card-deck mb-2 text-center">
+
+
+        <div class="card mb-4 mr-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{$all->date}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title" style="font-size: 20px;"> Name :{{$all->name}}</h1>
+                   
+            <textarea class="mt-4 mb-2" name="" id="" >
+              {{$all->note}}
+            </textarea>
+
+
+                      </div>
+                      
+            <div class="btn-group align-middle" role="group" ">
+            <button type="button" class="btn btn-success btn-sm mr-1" id="level-edit-item" data-item-id={{$id ?? ''}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
+          
+          <form method="POST" action="{{ route('destroy',  $all->id )}} " id="delete-form-{{ $all->id }}" style="display:none; ">
+                        {{csrf_field() }}
+                        {{ method_field("delete") }}
+                      </form>
+
+
+                      <button onclick="if(confirm('are you sure to delete this')){
+                                        document.getElementById('delete-form-{{ $all->id }}').submit();
+                                        }
+                                        else{
+                                        event.preventDefault();
+                                        }
+                                        " class="btn btn-danger btn-sm btn-raised">
+                        <i class="fa fa-trash" aria-hidden="false"></i>
+                      </button>
+
+          </div>
+          
+        </div>
+
+
+      </div>
+      @endforeach
+    </div>
+  </div>
+
+ 
+
+
+</section>
 
 
 
