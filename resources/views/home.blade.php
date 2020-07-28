@@ -43,12 +43,14 @@
 
         <div class="card mb-4 mr-4 box-shadow">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal">{{$all->name}}</h4>
+            <h4 class="my-0 font-weight-normal" id="id">{{$all->id}}</h4>
           </div>
+          <div class="card-body   name{{$all->id}} ">
+          {{$all->name}}
+          </div>
+          <h1 class="card-title pricing-card-title date{{$all->id}}" style="font-size: 20px;" id="date">{{$all->date}}</h1>
           <div class="card-body">
-          <h1 class="card-title pricing-card-title name{{$all->id}}" style="font-size: 20px;"> {{$all->date}}</h1>
-                   
-            <textarea class="mt-4 mb-2" name="note" id="" >
+            <textarea class="mt-4 mb-2 note{{$all->id}}  " name="note" id="" >
               {{$all->note}} 
             </textarea>
 
@@ -84,11 +86,11 @@
       @endforeach
 
 
-
     </div>
+    {{$data->links()}}
   </div>
 
- 
+
 
 
 </section>
@@ -201,7 +203,7 @@
 
           <div class="form-group ">
             <label for="modal-input-note"> textarea</label>
-            <textarea class="form-control" name="note" id="modal-input-note" rows="5"></textarea>
+            <textarea class="form-control border border-success" name="note" id="modal-input-note" rows="5"></textarea>
           </div>
           <div class="form-group">
             <input type="submit" value="Submit" class="form-control btn btn-success">

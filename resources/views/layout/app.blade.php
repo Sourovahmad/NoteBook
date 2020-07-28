@@ -56,18 +56,31 @@
 
 
 
-$(document).on('click', "#level-edit-item", function() {
+$(document).on('click', "#level-edit-item", function() { 
 
 var id=$(this).data('item-id');
-var nameclass= '.name'+id;
+
+var dateClass= '.date'+id;
+var date= $(dateClass).text().trim();
 
 
+var nameClass='.name'+id;
+var name= $(nameClass).text().trim();
 
+var noteClass='.note'+id;
+var note= $(noteClass).text().trim();
 
 
 $("#modal-input-id").val(id);
-$('#level-edit-modal').modal();
 $("#modal-input-name").val(name);
+$("#modal-input-date").val(date);
+$("#modal-input-note").val(note);
+
+
+
+
+$('#level-edit-modal').modal();
+
 }) ;
 </script> 
 

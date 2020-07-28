@@ -47,7 +47,7 @@
                         {{csrf_field() }}
                         {{ method_field("delete") }}
                       </form>
-
+ 
 
                       <button onclick="if(confirm('are you sure to delete this')){
                                         document.getElementById('delete-form-{{ $level->id }}').submit();
