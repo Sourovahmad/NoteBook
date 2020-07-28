@@ -71,6 +71,9 @@ var noteClass='.note'+id;
 var note= $(noteClass).text().trim();
 
 
+var action= $("#indexLink").val()+'/update/'+id;
+    $("#level-edit-form").attr('action',action);
+
 $("#modal-input-id").val(id);
 $("#modal-input-name").val(name);
 $("#modal-input-date").val(date);

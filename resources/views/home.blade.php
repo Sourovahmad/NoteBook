@@ -2,7 +2,9 @@
 @section('content')
 
 
-<div id="fullbody">
+
+
+
 
 
 <!-- ======= Header ======= -->
@@ -10,14 +12,14 @@
 
   <nav class="nav-menu">
     <ul>
-      <li class="active"><a href="#portfolio"  data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus"></i> <span>Add</span></a>
-   
-      <li class=""><a href="#hero"><i class="fa fa-home"></i> <span>Home</span></a></li>
-      <li><a href="#about"><i class="fa fa-user"></i> <span>About Abasas</span></a></li>
-      <li><a href="#resume"><i class="fa fa-book"></i> <span>Resume</span></a></li>
+      <li class="active"><a href="" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus"></i> <span>Add</span></a>
 
-      <li><a href="#services"><i class="fa fa-server"></i> <span>Services</span></a></li>
-      <li><a href="#contact"><i class="fa fa-envelope"></i> <span>Contact</span></a></li>
+      <li class=""><a href="#hero"><i class="fa fa-home"></i> <span>Home</span></a></li>
+      <li><a href="#hero"><i class="fa fa-user"></i> <span>About Abasas</span></a></li>
+
+
+      <li><a href="#hero"><i class="fa fa-server"></i> <span>Services</span></a></li>
+      <li><a href="#hero"><i class="fa fa-envelope"></i> <span>Contact</span></a></li>
     </ul>
   </nav><!-- .nav-menu -->
 
@@ -26,63 +28,66 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center">
 
- 
+
   <div class="container-fluid p-5">
-  <div class="section-title">
-    <h2>Your NOTE</h2>
-  </div>
+    <div class="section-title">
+      <h2>Your NOTE</h2>
+    </div>
 
-    <div class="row">
+    <div class="row pl-5">
 
-    @foreach ($data as $all)
-    @php
-    $id = $all->id;
-    @endphp
+      @foreach ($data as $all)
+      @php
+      $id = $all->id;
+      @endphp
       <div class="card-deck mb-2 text-center">
 
 
         <div class="card mb-4 mr-4 box-shadow">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal" id="id">{{$all->id}}</h4>
+            <h4 class=" text-success text-left" id="id" style="font-size:15px;">{{$all->id}}</h4>
+            <div class="card-body  font-weight-bold   name{{$all->id}} " style="font-size: 25px;">
+
+              {{$all->name}}
+            </div>
+
           </div>
-          <div class="card-body   name{{$all->id}} ">
-          {{$all->name}}
-          </div>
+
           <h1 class="card-title pricing-card-title date{{$all->id}}" style="font-size: 20px;" id="date">{{$all->date}}</h1>
           <div class="card-body">
-            <textarea class="mt-4 mb-2 note{{$all->id}}  " name="note" id="" >
-              {{$all->note}} 
+            <textarea class=" note{{$all->id}} " name="note" id="">
+            {{$all->note}}
             </textarea>
 
 
-                      </div>
-                      
-            <div class="btn-group align-middle" role="group" ">
-            <button type="button" class="btn btn-success btn-sm mr-1" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
-          
-          <form method="POST" action="{{ route('destroy',  $all->id )}} " id="delete-form-{{ $all->id }}" style="display:none; ">
-                        {{csrf_field() }}
-                        {{ method_field("delete") }}
-                      </form>
+          </div>
+
+          <div class="btn-group align-middle" role="group" ">
+            <button type=" button" class="btn btn-success btn-sm mr-1" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
+
+            <form method="POST" action="{{ route('destroy',  $all->id )}} " id="delete-form-{{ $all->id }}" style="display:none; ">
+              {{csrf_field() }}
+              {{ method_field("delete") }}
+            </form>
 
 
-                      <button onclick="if(confirm('are you sure to delete this')){
+            <button onclick="if(confirm('are you sure to delete this')){
                                         document.getElementById('delete-form-{{ $all->id }}').submit();
                                         }
                                         else{
                                         event.preventDefault();
                                         }
                                         " class="btn btn-danger btn-sm btn-raised">
-                        <i class="fa fa-trash" aria-hidden="false"></i>
-                      </button>
+              <i class="fa fa-trash" aria-hidden="false"></i>
+            </button>
 
           </div>
-          
+
         </div>
 
 
       </div>
-     
+
       @endforeach
 
 
@@ -170,8 +175,8 @@
 </div>
 
 
- <!-- Attachment Modal -->
- <div class="modal fade" id="level-edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
+<!-- Attachment Modal -->
+<div class="modal fade" id="level-edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -218,7 +223,5 @@
 
 <!-- End of all modal -->
 
-
- </div>
 
 @endsection
