@@ -72,7 +72,7 @@
             </form>
 
 
-            <button onclick="if(confirm('are you sure to delete this')){
+            <button onclick="if(confirm('ডিলেট কইরা লাইতায় ?')){
                                         document.getElementById('delete-form-{{ $all->id }}').submit();
                                         }
                                         else{
@@ -128,7 +128,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="name">Name </label>
-                  <input type="text" class="form-control" name="name" placeholder="Enter Your Name">
+                  <input type="text" class="form-control" name="name" placeholder="Enter Your Name" required>
                 </div>
             </div>
 
@@ -141,7 +141,7 @@
 
               <div class="form-group">
                 <label for="exampleFormControlInput1">Enter Date</label>
-                <input type="date" class="form-control" name="date" placeholder="name@example.com">
+                <input type="date" class="form-control" name="date" placeholder="name@example.com" required>
               </div>
             </div>
 
@@ -151,7 +151,7 @@
             <div class="col col-12  col-md-6 p-2">
               <div class="form-group ">
                 <label for="exampleFormControlTextarea1">Enter Text</label>
-                <textarea class="form-control border border-success" name="note" rows="5" col="10"></textarea>
+                <textarea class="form-control border border-success" name="note" rows="5" col="10"></textarea required>
               </div>
 
 
