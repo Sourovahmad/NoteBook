@@ -14,6 +14,7 @@
     <ul>
       <li class="active"><a href="" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus"></i> <span>Add</span></a>
 
+
       <li class=""><a href="#hero"><i class="fa fa-home"></i> <span>Home</span></a></li>
       <li><a href="#hero"><i class="fa fa-user"></i> <span>About Abasas</span></a></li>
 
@@ -62,7 +63,7 @@
 
           </div>
 
-          <div class="btn-group align-middle" role="group" ">
+          <div class="btn-group align-middle" role="group" >
             <button type=" button" class="btn btn-success btn-sm mr-1" id="level-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
 
             <form method="POST" action="{{ route('destroy',  $all->id )}} " id="delete-form-{{ $all->id }}" style="display:none; ">
@@ -187,7 +188,6 @@
       <div class="modal-body" id="attachment-body-content">
         <form id="level-edit-form" class="form-horizontal" method="POST" action="">
           @csrf
-
 
           <!-- id -->
           <div class="form-group">
